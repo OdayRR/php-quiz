@@ -2,7 +2,8 @@
 
 $question="is PHP is programing language ?";
 
-$options=array("yes"=>"Yes","no"=>"No");
+$options=array("Yes"=>"yes","No"=>"no");
+
 
 $correct_answer="yes";
 
@@ -50,8 +51,6 @@ function get_quiz_html()
 
 return $html;    
 }
-
-
 ?>
 
 <DOCTYPE html>
@@ -59,11 +58,28 @@ return $html;
     <head> 
         <title>Quiz Demo</title>
     </head>
-    <body>
-       <form action ="<?php echo $_SERVER["PHP"];?>"method="POST"> 
+    <body style="background-color:powderblue;">
+        <div align="center" > <form>
+           First name:<br>
+             <input type="text" name="firstname"><br>
+               Last name:<br>
+               <input type="text" name="lastname">
+          </form> 
+            <form>
+         <input type="radio" name="gender" value="male" checked> Male<br>
+         <input type="radio" name="gender" value="female"> Female<br>
+         <input type="radio" name="gender" value="other"> Other
+             </form>
+       <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">"
+           </div>
+        <div align="center" >
         <?php
         echo get_quiz_html();
         ?>
+            </div>
        </form>      
     </body>
 </html>
+
+
+
